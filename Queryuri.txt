@@ -1,0 +1,44 @@
+ WorkerLWASEventTable 
+ | where PreciseTimeStamp >= datetime(2020-03-06 08:00:00)and PreciseTimeStamp <= datetime(2020-03-06 14:10:00)and EventPrimaryStampName=~"waws-prod-cq1-013"
+ | where RoleInstance == "SmallDedicatedLinuxWebWorkerRole_IN_112"
+ | where Level == "ERROR"
+
+
+WorkerLWASEventTable
+        | where PreciseTimeStamp >= datetime(2020-01-22 08:45:00) and PreciseTimeStamp <= datetime(2020-01-23 08:30:00)
+        | where Facility == 'tmfootball-services-prod'
+
+| sort by TIMESTAMP asc
+
+WorkerApacheAccessLogEventTable 
+        | where PreciseTimeStamp >= datetime(2020-01-22 08:45:00) and PreciseTimeStamp <= datetime(2020-01-23 08:30:00)
+        | where Sitename == 'tmfootball-services-prod'
+| sort by TIMESTAMP asc
+
+WorkerSyslogEventTable  
+        | where PreciseTimeStamp >= datetime(2020-01-22 08:45:00) and PreciseTimeStamp <= datetime(2020-01-23 08:30:00)
+        | where Facility == 'tmfootball-services-prod'
+        | sort by TIMESTAMP asc
+
+ 
+
+ 
+
+WorkerDefaultLogEventTable   
+        | where PreciseTimeStamp >= datetime(2020-01-22 08:45:00) and PreciseTimeStamp <= datetime(2020-01-23 08:30:00)
+        | where Facility == 'tmfootball-services-prod'
+        | sort by TIMESTAMP asc
+
+ 
+
+WorkerAzureAgentEventTable    
+        | where PreciseTimeStamp >= datetime(2020-01-22 08:45:00) and PreciseTimeStamp <= datetime(2020-01-23 08:30:00)
+        | where Facility == 'tmfootball-services-prod'
+        | sort by TIMESTAMP asc
+
+ 
+
+LinuxRuntimeEvents    
+        | where PreciseTimeStamp >= datetime(2020-01-22 08:45:00) and PreciseTimeStamp <= datetime(2020-01-23 08:30:00)
+        | where Facility == 'tmfootball-services-prod'
+        | sort by TIMESTAMP asc
